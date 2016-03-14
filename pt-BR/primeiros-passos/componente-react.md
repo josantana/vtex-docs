@@ -31,15 +31,17 @@ class HomePage extends React.Component {
 }
 ```
 
-Como ele é um arquivo que contém código JSX, devemos compila-lo.
+Como ele é um arquivo que contém código JSX, devemos compilá-lo.
 
-Instale o babel com: `npm install babel-cli`. Para usa-lo digite:
+Para isso, vamos usar o Babel. Para instalá-lo, use `npm install babel-cli`. Além disso, também precisamos instalar um preset com `npm install babel-preset-react` para que o Babel entenda o código HTML em seu JSX (`<h1>Hello world!</h1>`). Tudo pronto, vamos compilar nosso arquivo:
 
 ```sh
-babel ./storefront/assets/**.jsx --out-dir .
+babel --presets react ./storefront/assets/**.jsx --out-dir .
 ```
 
-O Babel gera o arquivo `HomePage.js` com o código compilado.
+O Babel irá gerar o arquivo `HomePage.js` com o código compilado na mesma pasta do arquivo JSX.
+
+> Caso você receba como resposta que o babel não foi encontrado, adicione `./node_modules/.bin` ao seu $PATH. Dessa forma conseguimos executar qualquer script local como se estivesse instalado globalmente.
 
 ## Recapitulando
 
